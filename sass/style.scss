@@ -8,26 +8,17 @@ html, body {
     font-family: Lato;
   }
   
+
   .quiz-question {
-    background-image: url(https://scontent-waw1-1.xx.fbcdn.net/v/t1.15752-9/43429794_2094532127466369_7752338200307171328_n.png?_nc_cat=107&oh=cf4bed2028b053ed6e76550f85ee488c&oe=5C5D9255);
-    background-size: cover;
-    position: absolute;
-    padding: 50px 10px;
     text-transform: uppercase;
     font-weight: 900;
-    font-size: 40px !important; 
-    color: white;
-    line-height: 0.998em;
-    width: 180px;
-    height: 180px;
-    top: 0;
-    left: 200px;
+    font-size: 30px !important; 
+    color: $brandBlue;
+    width: 100%;
     display: block;
     margin: 0 auto;
     text-align: center;
-    margin-top: 30px;
-    font-size: 32px;
-    margin-bottom: 20px;
+    margin-top: 10px;
   }
   
   .quiz-answers {
@@ -41,6 +32,7 @@ html, body {
         clear: both;
     }
 }
+
   
   .sweet-alert button {
    border-radius: 0;
@@ -60,9 +52,23 @@ html, body {
     &:hover {
         background-color: $brandPink;
         color: #fff;
-      }
+    }
   }
   
+.start-button {
+    width: 200px !important;
+    height: 200px !important;
+    border-radius: 50% !important;
+    background: $brandPink !important;
+    color: white !important;
+    border-width: 0 !important;
+    margin-left: 150px !important;
+    &:hover {
+        background: $brandBlue !important;
+    }
+
+}
+
   .question-image {
       width: 100%;
       max-width: 500px;
@@ -73,12 +79,27 @@ html, body {
   .question-image img,
   .results-ratio,
   .results-social,
-  .quiz-title
+  .quiz-title,
+  .draxton-logo
   {
     display: block;
     margin: 0 auto;
     text-align: center;
     padding-top: 20px !important;
+  }
+
+  .draxton-logo {
+      background-image: url('../images/logo.png');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      margin-top: 100px;
+      height: 150px;
+      width: 500px;
+  }
+
+  .quiz-title {
+      padding-top: 0 !important;
   }
   
   .results-ratio,
@@ -88,9 +109,9 @@ html, body {
   }
   
   .question-image img {
-    margin-top: 20px;
+    margin-top: 10px;
   }
-  
+
   .image-credit {
     font-size: 12px;
     color: #696969;
@@ -109,9 +130,9 @@ html, body {
   }
   
   .quiz-title {
-    font-size: 60px;
+    font-size: 40px;
     font-weight: 300;
-    margin-top: 100px;
+    margin-top: 30px;
     margin-bottom: 30px;
   }
   
@@ -142,7 +163,7 @@ html, body {
   /*  left: 40px;*/
       margin-left: auto;
       margin-right: auto;
-    top: 40px;
+    top: 20px;
     display: none;
   }
   
@@ -150,21 +171,21 @@ html, body {
     display: block;
   }
   
-  .show{
+  .show {
    display:table !important;
   }
   
   .progress-circles li{
     list-style: none;
     display: inline-block;
-    background: #ccc;
+    background: $brandGray;
     width: 15px;
     height: 15px;
     border-radius: 50%;
     margin-right: 10px;
   }
   .progress-circles li.dark{
-    background: #1696d2;
+    background: $brandBlue;
   }
   
   
@@ -211,3 +232,4 @@ html, body {
     display: none;
   }
   }
+

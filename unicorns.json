@@ -2,61 +2,213 @@
   "questions": [
     {
       "answers": [
-        "Marshmallow",
-        "Moon glow",
-        "Egg shell"
+        "pompa wtryskowa",
+        "zacisk hamulcowy",
+        "tarcza hamulcowa"
+      ],
+      "correct": {
+        "index": 0
+      },
+      "image": "images/questions/q1.jpg",
+      "number": 1,
+      "prompt": "Co to jest?"
+    },
+    {
+      "answers": [
+        "pompa wtryskowa",
+        "zacisk hamulcowy",
+        "tarcza hamulcowa"
       ],
       "correct": {
         "index": 1
       },
-      "image": "unicorn.jpg",
-      "image_credit": "Random dude from the Interwebs",
+      "image": "images/questions/q2.jpg",
+      "number": 2,
+      "prompt": "Co to jest?"
+    },
+    {
+      "answers": [
+        "zacisk hamulcowy",
+        "pompka wtryskowa",
+        "pompka hamulcowa"
+      ],
+      "correct": {
+        "index": 2
+      },
+      "image": "images/questions/q3.jpg",
       "number": 3,
       "prompt": "Co to jest?"
     },
     {
       "answers": [
-        "Marshmallow",
-        "Moon glow",
-        "Egg shell"
+        "model formy odlewniczej",
+        "model łyżki ceramicznej",
+        "model robota zalewającego"
       ],
       "correct": {
-        "index": 1
+        "index": 0
       },
-      "image": "unicorn.jpg",
-      "image_credit": "Random dude from the Interwebs",
-      "number": 3,
-      "prompt": "What shade of white is this unicorn?"
+      "image": "images/questions/q4.jpg",
+      "number": 4,
+      "prompt": "Co to jest?"
     },
     {
       "answers": [
-        "Marshmallow",
-        "Moon glow",
-        "Egg shell"
+        "model 3D/CAD",
+        "raport pomiarowy CMM",
+        "rysunek techniczny 3D"
       ],
       "correct": {
         "index": 1
       },
-      "image": "unicorn.jpg",
-      "image_credit": "Random dude from the Interwebs",
-      "number": 3,
-      "prompt": "What shade of white is this unicorn?"
+      "image": "images/questions/q5.jpg",
+      "number": 5,
+      "prompt": "Co to jest?"
     },
     {
       "answers": [
-        "Marshmallow",
-        "Moon glow",
-        "Egg shell"
+        "zdjęcie makrografii",
+        "zdjęcie mikrografii",
+        "zdjęcie spektrografii"
       ],
       "correct": {
         "index": 1
       },
-      "image": "unicorn.jpg",
-      "image_credit": "Random dude from the Interwebs",
-      "number": 3,
-      "prompt": "What shade of white is this unicorn?"
+      "image": "images/questions/q6.jpg",
+      "number": 6,
+      "prompt": "Co to jest?"
+    },
+    {
+      "answers": [
+        "rozkład naprężeń w odlewie",
+        "symulacja krzepnięcia",
+        "pomiar z głowicy skanującej"
+      ],
+      "correct": {
+        "index": 2
+      },
+      "image": "images/questions/q7.jpg",
+      "number": 7,
+      "prompt": "Co to jest?"
+    },
+    {
+      "answers": [
+        "czerpaki/łyżki do metalu",
+        "rotor do rafinacji",
+        "odlany zacisk hamulcowy"
+      ],
+      "correct": {
+        "index": 0
+      },
+      "image": "images/questions/q8.jpg",
+      "number": 8,
+      "prompt": "Co to jest?"
+    },
+    {
+      "answers": [
+        "zrywarka",
+        "tokarka",
+        "frezarka"
+      ],
+      "correct": {
+        "index": 0
+      },
+      "image": "images/questions/q9.jpg",
+      "number": 9,
+      "prompt": "Co to jest?"
+    },
+    {
+      "answers": [
+        "modyfikator stopowy (Mg)",
+        "złom",
+        "sól do rafinacji"
+      ],
+      "correct": {
+        "index": 0
+      },
+      "image": "images/questions/q10.jpg",
+      "number": 10,
+      "prompt": "Co to jest?"
+    },
+    {
+      "answers": [
+        "wtrącenia tlenkowe",
+        "porowaty odlew",
+        "napalenia po spektrometrze"
+      ],
+      "correct": {
+        "index": 2
+      },
+      "image": "images/questions/q11.jpg",
+      "number": 11,
+      "prompt": "Co to jest?"
+    },
+    {
+      "answers": [
+        "myjka ultradźwiękowa",
+        "spektrometr iskrowy",
+        "komora wibracyjna"
+      ],
+      "correct": {
+        "index": 1
+      },
+      "image": "images/questions/q12.jpg",
+      "number": 12,
+      "prompt": "Co to jest?"
+    },
+    {
+      "answers": [
+        "czujnik pomiarowy",
+        "zegar barometru",
+        "licznik"
+      ],
+      "correct": {
+        "index": 0
+      },
+      "image": "images/questions/q13.jpg",
+      "number": 13,
+      "prompt": "Co to jest?"
+    },
+    {
+      "answers": [
+        "przebijak",
+        "układ bazowy/mocowanie",
+        "nakładka do przyrządu"
+      ],
+      "correct": {
+        "index": 1
+      },
+      "image": "images/questions/q14.jpg",
+      "number": 14,
+      "prompt": "Co to jest?"
+    },
+    {
+      "answers": [
+        "pręty ogrodzeniowe",
+        "pręty zbrojeniowe",
+        "modyfikator stopowy (Sr)"
+      ],
+      "correct": {
+        "index": 2
+      },
+      "image": "images/questions/q15.jpg",
+      "number": 15,
+      "prompt": "Co to jest?"
+    },
+    {
+      "answers": [
+        "panel sterowania CNC",
+        "komputer",
+        "panel kserokopiarki"
+      ],
+      "correct": {
+        "index": 0
+      },
+      "image": "images/questions/q16.jpg",
+      "number": 16,
+      "prompt": "Co to jest?"
     }
   ],
-  "title": "How well do you know real creatures?",
+  "title": "Jak dobrze znasz naszą branżę?",
   "url": "http://urbaninstitute.github.io/quick-quiz/"
 }

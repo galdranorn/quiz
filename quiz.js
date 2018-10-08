@@ -67,7 +67,9 @@ function render(quiz_opts) {
     .attr("class", "item active")
     .attr("height", height + "px")
     .appendTo($slides);
-
+  $('<div>')
+    .attr('class', 'draxton-logo')
+    .appendTo($title_slide);
   $('<h1>')
     .text(quiz_opts.title)
     .attr('class', 'quiz-title')
@@ -81,8 +83,8 @@ var $indicators = $('<ol>')
     .attr('class', 'progress-circles')
 
   $("<button>")
-    .attr('class', 'quiz-button btn')
-    .text("Take the quiz!")
+    .attr('class', 'start-button quiz-button btn')
+    .text("Weź udział w quizie!")
     .click(function() {
       $quiz.carousel('next');
       $indicators.addClass('show');
@@ -165,7 +167,7 @@ var $indicators = $('<ol>')
       var opts = {
         allowOutsideClick : false,
         allowEscapeKey : false,
-        confirmButtonText: "Next Question",
+        confirmButtonText: "Następne pytanie",
         html : true,
         confirmButtonColor: "#0096D2"
       };
@@ -174,8 +176,8 @@ var $indicators = $('<ol>')
       // answer dialogue
       if (correct) {
         opts = $.extend(opts, {
-          title: "Nice!",
-          text: "Well done" + (
+          title: "Brawo!",
+          text: "Dobra robota!" + (
             question.correct.text ?
             ("<div class=\"correct-text\">" +
               question.correct.text +
@@ -185,10 +187,10 @@ var $indicators = $('<ol>')
         });
       } else {
         opts = $.extend(opts, {
-          title: "Drat",
+          title: "Niestety nie :-(",
           text: (
-            "Nope, not quite right!<br/><br/>" +
-            "The correct answer was \"" +
+            "Tym razem się nie udało.<br/><br/>" +
+            "Poprawna odpowiedź to: \"" +
             question.answers[question.correct.index] + "\"." + (
             question.correct.text ?
             ("<div class=\"correct-text\">" +
@@ -201,7 +203,7 @@ var $indicators = $('<ol>')
       }
 
       if (last_question) {
-        opts.confirmButtonText = "See your results";
+        opts.confirmButtonText = "Zobacz swoje wyniki!";
       }
 
       // bind click event to answer button,
