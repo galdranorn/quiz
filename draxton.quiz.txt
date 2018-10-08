@@ -1,0 +1,80 @@
+// example quiz text
+// @bsouthga
+// <- (this is a comment and will be ignored)
+
+// this is the url for the parent
+url: http://galdranorn.github.io/quiz/
+
+// this is the title of the quiz
+# Draxton quiz
+
+// the number signifies the question order
+// correct answer is indicated by a "*"
+
+1) Co to jest?
+  * pompa wtryskowa
+  - zacisk hamulcowy
+  - tarcza hamulcowa
+
+  // this image will appear along with
+  // the question pompt
+  (image) unicorn.jpg
+
+2) Co to jest?
+  - pompa wtryskowa
+  * zacisk hamulcowy
+  - tarcza hamulcowa
+
+  // this image will appear along with
+  // the question pompt
+  (image) unicorn.jpg
+
+
+3) Co to jest?
+  - zacisk hamulcowy
+  - pompka wtryskowa
+  * pompka hamulcowa
+
+  // this image will appear along with
+  // the question pompt
+  (image) unicorn.jpg
+
+
+4) Co to jest?
+  * model formy odlewniczej
+  - model ³y¿ki ceramicznej
+  - model robota zalewaj¹cego
+
+  // this image will appear along with
+  // the question pompt
+  (image) unicorn.jpg
+
+
+5) Co to jest?
+  - model 3D/CAD
+  * raport pomiarowy CMM
+  - rysunek techniczny 3D
+
+  // this image will appear along with
+  // the question pompt
+  (image) unicorn.jpg
+
+
+6) Co to jest?
+  - zdjêcie makrografii
+  * zdjêcie mikrografii
+  - zdjêcie spektrografii
+
+  // this image will appear along with
+  // the question pompt
+  (image) unicorn.jpg
+
+
+7) Co to jest?
+  - rozk³ad naprê¿eñ w odlewie
+  - symulacja krzepniêcia
+  * pomiar z g³owicy skanuj¹cej
+
+  // this image will appear along with
+  // the question pompt
+  (image) unicorn.jpg
