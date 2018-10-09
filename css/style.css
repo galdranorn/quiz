@@ -1,6 +1,70 @@
+.invisible {
+  display: none;
+}
+
 html, body {
   width: 100%;
   font-family: Lato;
+}
+
+#modalBox .modal-rules {
+  /* ---- hide browser default checkbox ---- */
+  /* ---- create custom checkbox ---- */
+}
+
+#modalBox .modal-rules .checkboxLine {
+  display: inline-block;
+  line-height: 25px;
+  position: relative;
+  margin: 2px;
+  padding: 8px 10px 8px 35px;
+  cursor: pointer;
+  font-size: 12px;
+  font-family: Lato;
+  font-weight: 400;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+#modalBox .modal-rules input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+#modalBox .modal-rules input:checked ~ .checkmark {
+  background-color: #002f5f;
+  border-color: #002f5f;
+}
+
+#modalBox .modal-rules input:checked ~ .checkmark:after {
+  display: block;
+}
+
+#modalBox .modal-rules .checkmark {
+  position: absolute;
+  top: 13px;
+  left: 10px;
+  height: 14px;
+  width: 14px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #7f7f7f;
+}
+
+#modalBox .modal-rules .checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+  left: 5px;
+  top: 2px;
+  width: 3px;
+  height: 7px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
 }
 
 .quiz-question {

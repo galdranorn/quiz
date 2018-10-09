@@ -16,7 +16,32 @@
     }
   </style>
 </head>
+
 <body>
+
+    <div id="modalBox" class="invisible">
+        <form>
+          <div class="modal-data">
+            <input class="form-control" required id="playerName" type="text" placeholder="Imię i nazwisko"></input>
+            <input class="form-control" required id="playerPhone" type="text" placeholder="Numer telefonu"></input>
+          </div>
+          <div class="modal-rules">
+          <label class="checkboxLine">
+              Oświadczam, że zapoznałem/am się z regulaminem konkursu i akceptuję wszystkie zawarte w nim warunki.
+              <input id="rulesCheck" type="checkbox">
+              <span class="checkmark"></span>
+          </label>
+          <label class="checkboxLine">
+            Wyrażam zgodę na przetwarzanie moich danych osobowych przez Biuro Konkursu oraz przedstawicieli mediów dla potrzeb związanych z Konkursem, zgodnie z Ustawą o Ochronie Danych Osobowych (Dz. U. 1997 nr 133 poz. 883).
+            <input id="personalDataCheck" type="checkbox">
+            <span class="checkmark"></span>
+          </label>
+        </div>
+        </form>
+        <button class="form-control" id="acceptance">Akceptuję</button>
+        <button id="rejection">Nie akceptuję</button>
+      </div>
+
   <div class="container-fluid">
     <div id="quiz"></div>
   </div>

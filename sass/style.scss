@@ -2,12 +2,72 @@
 $brandPink: #b71234;
 $brandBlue: #002f5f;
 $brandGray: #7f7f7f;
+.invisible {display: none;}
 
 html, body {
     width: 100%;
     font-family: Lato;
   }
   
+#modalBox {
+  .modal-data {
+    input {
+
+    }
+  }
+  .modal-rules {
+    .checkboxLine {
+      display: inline-block;
+      line-height: 25px;
+      position: relative;
+      margin: 2px;
+      padding: 8px 10px 8px 35px;
+      cursor: pointer;
+      font-size: 12px;
+      font-family: Lato;
+      font-weight: 400;
+      user-select: none;
+    }
+  
+  /* ---- hide browser default checkbox ---- */
+      input {
+          position: absolute;
+          opacity: 0;
+          cursor: pointer;
+          &:checked ~ .checkmark {
+              background-color: $brandBlue;
+              border-color: $brandBlue;
+              &:after {
+                  display: block;
+              }
+          }
+      }
+  
+  /* ---- create custom checkbox ---- */
+      .checkmark {
+          position: absolute;
+          top: 13px;
+          left: 10px;
+          height: 14px;
+          width: 14px;
+          border-style: solid;
+          border-width: 1px;
+          border-color: $brandGray;
+          &:after {
+              content: "";
+              position: absolute;
+              display: none;
+              left: 5px;
+              top: 2px;
+              width: 3px;
+              height: 7px;
+              border: solid white;
+              border-width: 0 2px 2px 0;
+              transform: rotate(45deg);
+            }
+      }
+    }
+  }
 
   .quiz-question {
     text-transform: uppercase;
@@ -67,7 +127,7 @@ html, body {
         background: $brandBlue !important;
     }
 
-}
+  }
 
   .question-image {
       width: 100%;

@@ -1,7 +1,9 @@
 /*
   Quick quiz bootstrap extension
 */
-
+/* quiz players data */
+var playerList = [];
+var playersCount = playerList.length;
 
 ;(function($) {
 
@@ -82,10 +84,42 @@ function render(quiz_opts) {
 var $indicators = $('<ol>')
     .attr('class', 'progress-circles')
 
+
+
+
+
+    /*!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+
+
+
   $("<button>")
     .attr('class', 'start-button quiz-button btn')
     .text("Weź udział w quizie!")
     .click(function() {
+      document.querySelector("#modalBox").classList.remove("invisible");
+      document.querySelector("#acceptance").addEventListener("click", function() {
+        var playerName = document.querySelector("#playerName").value;
+        var playerPhone = document.querySelector("#playerPhone").value;
+        var rulesCheck = document.querySelector("#rulesCheck");
+        var personalDataCheck = document.querySelector("#personalDataCheck");
+        
+        if (playerName=="") {alert("Wpisz imię i nazwisko!")}
+        else if (playerPhone=="") {alert("Wpisz numer telefonu!")}
+        else if (rulesCheck.checked!==true) {alert("Musisz zaakceptować regulamin!")}
+        else if (personalDataCheck.checked!==true) {alert("Musisz wyrazić zgodę na przetwarzanie danych!")}
+        else {
+          var playerData = {
+              name: playerName,
+              phone: playerPhone
+            };
+            playerList[playersCount] = playerData;
+            console.log(playerList);
+            document.querySelector("#modalBox").classList.add("invisible")
+          };
+      }); 
+
+/* ------------------------------------ */      
+      
       $quiz.carousel('next');
       $indicators.addClass('show');
 
@@ -95,9 +129,6 @@ var $indicators = $('<ol>')
         return ((250 - this.getBoundingClientRect().width) *0.5) + "px"
       })
     })
-
-
-
     })
     .appendTo($start_button);
 
@@ -360,4 +391,55 @@ function facebook(state, opts) {
 
 
 })(jQuery);
+
+// MODAL
+
+function modal() {
+  var fog = document.createElement('div');
+  fog.className = 'fog';
+  var modal = document.createElement('div');
+  modal.className = 'modal';
+  modal.innerHTML = `
+     <div class="modal-data">
+       <input class="input-modal" id="playerName" type="text" placeholder="Imię i nazwisko"></input>
+       <input class="input-modal" id="playerPhone" type="text" placeholder="Numer telefonu"></input>
+     </div>
+     <div class="modal-rules">
+      <label class="checkboxLine">
+          Oświadczam, że zapoznałem/am się z regulaminem konkursu i akceptuję wszystkie zawarte w nim warunki.
+          <input type="checkbox">
+          <span class="checkmark"></span>
+      </label>
+      <label class="checkboxLine">
+        Wyrażam zgodę na przetwarzanie moich danych osobowych przez Biuro Konkursu oraz przedstawicieli mediów dla potrzeb związanych z Konkursem, zgodnie z Ustawą o Ochronie Danych Osobowych (Dz. U. 1997 nr 133 poz. 883).
+        <input type="checkbox">
+        <span class="checkmark"></span>
+      </label>
+     </div>
+     <div class="modal-footer">
+        <button class="btn-ok">Akceptuję</button>
+        <button class="btn-close">Nie akceptuję</button>
+     </div>`;
+  modal.querySelector(".btn-close").addEventListener("click", function() {
+    fog.remove();
+  })
+   modal.querySelector(".btn-ok").addEventListener("click", function() {
+     callback();
+     fog.remove();
+   })
+  
+  fog.appendChild(modal);
+  document.body.appendChild(fog);
+
+
+  var playerNameInput = document.querySelector("#playerName")
+  var playerPhoneInput = document.querySelector("#playerPhone")
+  playerName = playerNameInput.value
+  playerPhone = playerPhoneInput.value
+  var playerData = {
+    name: playerName,
+    phone: playerPhone
+  }
+  playerList[playersCount] = playerData;
+}
 
