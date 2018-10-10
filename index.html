@@ -18,9 +18,21 @@
 </head>
 
 <body>
-    <div class="fog"></div>
+
+    <div id="resultsModal" class="invisible">
+      <h1>Tabela wyników</h1>
+      <ul></ul>
+
+      <button>Wyczyść localStorage</button>
+      <button id="addEmpty">Dodaj test</button>
+      <button id="closeResults">Zamknij</button>
+    </div>
+
+<!-- START MODAL -->
+    <div id="fog" class="invisible"></div>
     <div id="modalBox" class="invisible">
         <h1>Wpisz swoje dane</h1>
+        <!-- DATA FORM -->
         <form>
           <div class="modal-data">
             <input class="form-control" required id="playerName" type="text" placeholder="Imię i nazwisko"></input>
@@ -43,13 +55,21 @@
         <button class="form-control" id="rejection">Nie akceptuję</button>
       </div>
 
+<!-- QUIZ -->
+
   <div class="container-fluid">
     <div id="quiz"></div>
   </div>
-  <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-  <script src="sweet-alert.min.js"></script>
-  <script src="quiz.js"></script>
+  
+<button id="scoresBtn">Scores</button>
+
+
+
+
+<script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script src="js/sweet-alert.min.js"></script>
+<script src="js/quiz.js"></script>
   <script>
     $(function() {
       $('#quiz').quiz("unicorns.json");

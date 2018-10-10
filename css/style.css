@@ -1,357 +1,111 @@
-.invisible {
-  display: none;
-}
+.invisible { display: none; }
 
-html, body {
-  width: 100%;
-  font-family: Lato;
-}
+html, body { width: 100%; font-family: Lato; }
 
-.fog {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 2;
-  width: 100%;
-  height: 100%;
-  background: black;
-  opacity: 0.7;
-}
+#fog { position: fixed; top: 0; left: 0; z-index: 2; width: 100%; height: 100%; background: black; opacity: 0.7; }
 
-#modalBox {
-  width: 60%;
-  height: 80%;
-  position: absolute;
-  z-index: 3;
-  background: white;
-  padding: 50px;
-  border: 1px solid #002f5f;
-  border-radius: 10px;
-  top: 10%;
-  left: 20%;
-}
+#scoresBtn { background: white; font-size: 8px; color: #7f7f7f; border: 1px solid #7f7f7f; border-radius: 3px; margin: 10px; }
 
-#modalBox #acceptance {
-  width: 40%;
-  margin: 5px auto;
-}
+#scoresBtn:hover { background: #7f7f7f; }
 
-#modalBox #acceptance:hover {
-  background: #002f5f;
-  color: white;
-}
+#resultsModal button { width: 30%; padding: 5px; background: white; border: 1px solid #7f7f7f; border-radius: 3px; overflow-y: auto; }
 
-#modalBox #rejection {
-  width: 40%;
-  margin: 5px auto;
-}
+#resultsModal button:hover { background: #7f7f7f; }
 
-#modalBox #rejection:hover {
-  background: #b71234;
-  color: white;
-}
+#modalBox, #resultsModal { width: 60%; height: 80%; max-height: 600px; position: absolute; z-index: 3; background: white; padding: 50px; border: 1px solid #002f5f; border-radius: 10px; top: 10%; left: 20%; }
 
-#modalBox h1 {
-  text-align: center;
-  color: #b71234;
-  padding: 10px;
-}
+#modalBox #acceptance, #resultsModal #acceptance { width: 40%; margin: 5px auto; }
 
-#modalBox .modal-data {
-  padding: 10px;
-}
+#modalBox #acceptance:hover, #resultsModal #acceptance:hover { background: #002f5f; color: white; }
 
-#modalBox .modal-data input {
-  font-family: Lato;
-  margin: 5px 0;
-}
+#modalBox #rejection, #resultsModal #rejection { width: 40%; margin: 5px auto; }
 
-#modalBox .modal-rules {
-  padding: 30px 10px;
-  /* ---- hide browser default checkbox ---- */
-  /* ---- create custom checkbox ---- */
-}
+#modalBox #rejection:hover, #resultsModal #rejection:hover { background: #b71234; color: white; }
 
-#modalBox .modal-rules .checkboxLine {
-  display: inline-block;
-  line-height: 25px;
-  position: relative;
-  margin: 2px;
-  padding: 8px 10px 8px 35px;
-  cursor: pointer;
-  font-size: 12px;
-  font-family: Lato;
-  font-weight: 400;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-}
+#modalBox h1, #resultsModal h1 { text-align: center; color: #b71234; padding: 10px; }
 
-#modalBox .modal-rules input {
-  position: absolute;
-  opacity: 0;
-  cursor: pointer;
-}
+#modalBox .modal-data, #resultsModal .modal-data { padding: 10px; }
 
-#modalBox .modal-rules input:checked ~ .checkmark {
-  background-color: #002f5f;
-  border-color: #002f5f;
-}
+#modalBox .modal-data input, #resultsModal .modal-data input { font-family: Lato; margin: 5px 0; }
 
-#modalBox .modal-rules input:checked ~ .checkmark:after {
-  display: block;
-}
+#modalBox .modal-rules, #resultsModal .modal-rules { padding: 30px 10px; /* ---- hide browser default checkbox ---- */ /* ---- create custom checkbox ---- */ }
 
-#modalBox .modal-rules .checkmark {
-  position: absolute;
-  top: 13px;
-  left: 10px;
-  height: 14px;
-  width: 14px;
-  border-style: solid;
-  border-width: 1px;
-  border-color: #7f7f7f;
-}
+#modalBox .modal-rules .checkboxLine, #resultsModal .modal-rules .checkboxLine { display: inline-block; line-height: 25px; position: relative; margin: 2px; padding: 8px 10px 8px 35px; cursor: pointer; font-size: 12px; font-family: Lato; font-weight: 400; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; }
 
-#modalBox .modal-rules .checkmark:after {
-  content: "";
-  position: absolute;
-  display: none;
-  left: 5px;
-  top: 2px;
-  width: 3px;
-  height: 7px;
-  border: solid white;
-  border-width: 0 2px 2px 0;
-  transform: rotate(45deg);
-}
+#modalBox .modal-rules input, #resultsModal .modal-rules input { position: absolute; opacity: 0; cursor: pointer; }
 
-.quiz-question {
-  text-transform: uppercase;
-  font-weight: 900;
-  font-size: 30px !important;
-  color: #002f5f;
-  width: 100%;
-  display: block;
-  margin: 0 auto;
-  text-align: center;
-  margin-top: 10px;
-}
+#modalBox .modal-rules input:checked ~ .checkmark, #resultsModal .modal-rules input:checked ~ .checkmark { background-color: #002f5f; border-color: #002f5f; }
 
-.quiz-answers {
-  text-align: center;
-  width: 500px;
-  margin: 0 auto;
-  display: block;
-  padding-bottom: 5px;
-}
+#modalBox .modal-rules input:checked ~ .checkmark:after, #resultsModal .modal-rules input:checked ~ .checkmark:after { display: block; }
 
-.quiz-answers .btn {
-  float: left;
-  clear: both;
-}
+#modalBox .modal-rules .checkmark, #resultsModal .modal-rules .checkmark { position: absolute; top: 13px; left: 10px; height: 14px; width: 14px; border-style: solid; border-width: 1px; border-color: #7f7f7f; }
 
-.sweet-alert button {
-  border-radius: 0;
-  text-transform: uppercase;
-  font-weight: 400;
-}
+#modalBox .modal-rules .checkmark:after, #resultsModal .modal-rules .checkmark:after { content: ""; position: absolute; display: none; left: 5px; top: 2px; width: 3px; height: 7px; border: solid white; border-width: 0 2px 2px 0; transform: rotate(45deg); }
 
-.quiz-button.btn {
-  margin-top: 10px;
-  background-color: white;
-  border: 1px solid #7f7f7f;
-  border-radius: 7px;
-  color: #7f7f7f;
-  text-transform: uppercase;
-  white-space: normal !important;
-  max-width: 500px;
-  width: 500px;
-}
+.quiz-question { text-transform: uppercase; font-weight: 900; font-size: 30px !important; color: #002f5f; width: 100%; display: block; margin: 0 auto; text-align: center; margin-top: 10px; }
 
-.quiz-button.btn:hover {
-  background-color: #b71234;
-  color: #fff;
-}
+.quiz-answers { text-align: center; width: 500px; margin: 0 auto; display: block; padding-bottom: 5px; }
 
-.start-button {
-  width: 200px !important;
-  height: 200px !important;
-  border-radius: 50% !important;
-  background: #b71234 !important;
-  color: white !important;
-  border-width: 0 !important;
-  margin-left: 150px !important;
-}
+.quiz-answers .btn { float: left; clear: both; }
 
-.start-button:hover {
-  background: #002f5f !important;
-}
+.sweet-alert button { border-radius: 0; text-transform: uppercase; font-weight: 400; }
 
-.question-image {
-  width: 100%;
-  max-width: 500px;
-  margin-bottom: -80px;
-  margin: 0 auto;
-}
+.quiz-button.btn { margin-top: 10px; background-color: white; border: 1px solid #7f7f7f; border-radius: 7px; color: #7f7f7f; text-transform: uppercase; white-space: normal !important; max-width: 500px; width: 500px; }
 
-.question-image img,
-.results-ratio,
-.results-social,
-.quiz-title,
-.draxton-logo {
-  display: block;
-  margin: 0 auto;
-  text-align: center;
-  padding-top: 20px !important;
-}
+.quiz-button.btn:hover { background-color: #b71234; color: #fff; }
 
-.draxton-logo {
-  background-image: url("../images/logo.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
-  margin-top: 100px;
-  height: 150px;
-  width: 500px;
-}
+.start-button { width: 200px !important; height: 200px !important; border-radius: 50% !important; background: #b71234 !important; color: white !important; border-width: 0 !important; margin-left: 150px !important; }
 
-.quiz-title {
-  padding-top: 0 !important;
-}
+.start-button:hover { background: #002f5f !important; }
 
-.results-ratio,
-.results-social,
-.quiz-title {
-  max-width: 600px;
-}
+.question-image { width: 100%; max-width: 500px; margin-bottom: -80px; margin: 0 auto; }
 
-.question-image img {
-  margin-top: 10px;
-}
+.question-image img, .results-ratio, .results-social, .quiz-title, .draxton-logo { display: block; margin: 0 auto; text-align: center; padding-top: 20px !important; }
 
-.image-credit {
-  font-size: 12px;
-  color: #696969;
-  font-weight: 400;
-  text-align: right;
-  max-width: 1100px;
-  margin: 0 auto;
-}
+.draxton-logo { background-image: url("../images/logo.png"); background-repeat: no-repeat; background-position: center; background-size: contain; margin-top: 100px; height: 150px; width: 500px; }
 
-.results-social {
-  display: table;
-}
+.quiz-title { padding-top: 0 !important; }
 
-.correct-text {
-  margin-top: 10px;
-  font-style: italic;
-  font-family: Georgia, serif;
-}
+.results-ratio, .results-social, .quiz-title { max-width: 600px; }
 
-.quiz-title {
-  font-size: 40px;
-  font-weight: 300;
-  margin-top: 30px;
-  margin-bottom: 30px;
-}
+.question-image img { margin-top: 10px; }
 
-.results-ratio {
-  margin: 20px auto;
-  font-size: 24px;
-  font-weight: bold;
-}
+.image-credit { font-size: 12px; color: #696969; font-weight: 400; text-align: right; max-width: 1100px; margin: 0 auto; }
 
-.results-social {
-  width: 270px;
-  clear: both;
-  padding-top: 20px;
-}
+.results-social { display: table; }
 
-#social-text {
-  margin-bottom: 20px;
-  width: 275px;
-}
+.correct-text { margin-top: 10px; font-style: italic; font-family: Georgia, serif; }
 
-.results-social a:not(:first-child) {
-  margin-left: 20px;
-}
+.quiz-title { font-size: 40px; font-weight: 300; margin-top: 30px; margin-bottom: 30px; }
 
-.progress-circles {
-  position: relative;
-  padding: 0;
-  margin: 0;
-  /*  left: 40px;*/
-  margin-left: auto;
-  margin-right: auto;
-  top: 20px;
-  display: none;
-}
+.results-ratio { margin: 20px auto; font-size: 24px; font-weight: bold; }
 
-.progress-circles.show {
-  display: block;
-}
+.results-social { width: 270px; clear: both; padding-top: 20px; }
 
-.show {
-  display: table !important;
-}
+#social-text { margin-bottom: 20px; width: 275px; }
 
-.progress-circles li {
-  list-style: none;
-  display: inline-block;
-  background: #7f7f7f;
-  width: 15px;
-  height: 15px;
-  border-radius: 50%;
-  margin-right: 10px;
-}
+.results-social a:not(:first-child) { margin-left: 20px; }
 
-.progress-circles li.dark {
-  background: #002f5f;
-}
+.progress-circles { position: relative; padding: 0; margin: 0; /*  left: 40px;*/ margin-left: auto; margin-right: auto; top: 20px; display: none; }
 
-.follow-tw {
-  display: inline-block;
-  background-repeat: no-repeat;
-  background-image: url(icons-s973202652e.png);
-  background-position: 0 -993px;
-  height: 32px;
-  width: 32px;
-}
+.progress-circles.show { display: block; }
 
-.follow-tw:hover {
-  background-position: 0 -1401px;
-}
+.show { display: table !important; }
 
-.follow-fb {
-  display: inline-block;
-  background-repeat: no-repeat;
-  background-image: url(icons-s973202652e.png);
-  background-position: 0 -1880px;
-  height: 32px;
-  width: 32px;
-}
+.progress-circles li { list-style: none; display: inline-block; background: #7f7f7f; width: 15px; height: 15px; border-radius: 50%; margin-right: 10px; }
 
-.follow-fb:hover {
-  background-position: 0 -1433px;
-}
+.progress-circles li.dark { background: #002f5f; }
 
-.sweet-alert {
-  margin-top: -251px !important;
-  position: absolute;
-}
+.follow-tw { display: inline-block; background-repeat: no-repeat; background-image: url(icons-s973202652e.png); background-position: 0 -993px; height: 32px; width: 32px; }
 
-@media (max-width: 540px) {
-  .quiz-question {
-    font-size: 20px;
-  }
-  .sweet-alert {
-    margin-top: -251px !important;
-    position: absolute;
-  }
-  .sweet-alert h2 {
-    display: none;
-  }
-}
-/*# sourceMappingURL=style.css.map */
+.follow-tw:hover { background-position: 0 -1401px; }
+
+.follow-fb { display: inline-block; background-repeat: no-repeat; background-image: url(icons-s973202652e.png); background-position: 0 -1880px; height: 32px; width: 32px; }
+
+.follow-fb:hover { background-position: 0 -1433px; }
+
+.sweet-alert { margin-top: -251px !important; position: absolute; }
+
+@media (max-width: 540px) { .quiz-question { font-size: 20px; }
+  .sweet-alert { margin-top: -251px !important; position: absolute; }
+  .sweet-alert h2 { display: none; } }
