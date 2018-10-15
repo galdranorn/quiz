@@ -86,6 +86,11 @@ html, body {
     input {
       font-family: Lato;
       margin: 5px 0;
+      width: 75%;
+    }
+    p {width: 20%;}
+    p, input {
+      display: inline-block;
     }
   }
   .modal-rules {

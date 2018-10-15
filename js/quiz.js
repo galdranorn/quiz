@@ -6,6 +6,7 @@ var playerList = [];
 var playersCount = localStorage.length;
 var playerName = "";
 var playerPhone = "";
+var playerScore;
 
 var resultsModal = document.querySelector('#resultsModal');
 var scoresBtn = document.querySelector('#scoresBtn');
@@ -272,9 +273,9 @@ var $indicators = $('<ol>')
 
             $results_title.html(resultsText(state));
             $results_ratio.text(
-              "You got " +
+              "Brawo! Zdobyłeś " +
               Math.round(100*(state.correct/state.total)) +
-              "% of the questions correct!"
+              "% wszystkich punktów!"
             );
             $twitter_link.attr('href', tweet(state, quiz_opts));
             $facebook_link.attr('href', facebook(state, quiz_opts));
@@ -326,7 +327,7 @@ var $indicators = $('<ol>')
 
   var $social = $("<div>")
     .attr('class', 'results-social')
-    .html('<div id = "social-text">Did you like the quiz? Share your results with your friends, so they can give it a shot!</div>')
+    .html('<div id = "social-text">Pamiętaj, aby wziąć udział w konkursie musisz zapisać wyniki za pomocą powyższego przycisku. :-)</div>')
     .appendTo($results_slide);
 
   var $twitter_link = $('<a>')
@@ -340,8 +341,9 @@ var $indicators = $('<ol>')
   $("<button>")
     .attr('class', 'quiz-button btn')
     .attr('id', 'add')
-    .text("Try again?")
+    .text("Zapisz wyniki i wróć")
     .click(function() {
+      playerScore = state.correct;
       state.correct = 0;
       $quiz.carousel(0);
     })
@@ -377,7 +379,7 @@ var $indicators = $('<ol>')
 
   //adding regular record to ul
   add.addEventListener('click', function () {
-    dataToStorage = [playerName, playerPhone, state.correct];
+    dataToStorage = [playerName, playerPhone, playerScore];
     console.log(localStorage);
     itemsArray.push(dataToStorage);
     localStorage.setItem('items', JSON.stringify(itemsArray));
@@ -426,22 +428,22 @@ function resultsText(state) {
 
   switch (true) {
     case (ratio === 1):
-      text = "Wow&mdash;perfect score!";
+      text = "Dziękujemy za wzięcie udziału w quizie! :-)";
       break;
     case (ratio > 0.9):
-      text = "Awesome job, you got most of them right.";
+      text = "Dziękujemy za wzięcie udziału w quizie! :-)";
       break;
     case (ratio > 0.60):
-      text = "Pretty good, we'll say that's a pass.";
+      text = "Dziękujemy za wzięcie udziału w quizie! :-)";
       break;
     case (ratio > 0.5):
-      text = "Well, at least you got half of them right&hellip;";
+      text = "Dziękujemy za wzięcie udziału w quizie! :-)";
       break;
     case (ratio < 0.5 && ratio !== 0):
-      text = "Looks like this was a tough one, better luck next time.";
+      text = "Dziękujemy za wzięcie udziału w quizie! :-)";
       break;
     case (ratio === 0):
-      text = "Yikes, none correct. Well, maybe it was rigged?";
+      text = "Dziękujemy za wzięcie udziału w quizie! :-)";
       break;
   }
   return text;
